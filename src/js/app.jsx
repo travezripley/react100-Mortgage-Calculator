@@ -32,16 +32,16 @@ export default class App extends React.Component {
 
   updateRate(e) {
     this.setState({
-      balance: e.target.value
+      rate: e.target.value
     });
   }
   updateTerm(e) {
     this.setState({
-      balance: e.target.value
+      term: e.target.value
     });
   }
 
-}
+
 
 //the equation
 calculate(balance, rate, term) {
@@ -51,12 +51,8 @@ calculate(balance, rate, term) {
   let denominator = ((1 + r) ** n) - 1;
 
   return parseFloat(balance * (numerator / denominator)).toFixed(2);
-  
 }
-
-
-
-handleClick(e){
+handleClick(e) {
   e.preventDefault();
   //console.log('handleClick()');
 
@@ -74,56 +70,91 @@ handleClick(e){
   
 
 
- render() {
-    return (
-      <div className="container">
-        <h3>Mortgage Calculator</h3>
-        <div className="row">
+render() {
+  return (
 
-
-          {/* loan balance form */}
-          <div className="col-md-1 form-group">
-            <label htmlfor="balance"> Loan Balance: </label>
-            <input name="balance" type="number" className="form-control" />
+    <div className="container">
+      {
+        <form className="form-horizontal">
+          <div className="col-md-2">
           </div>
 
+          <div className="page-header">
+            <h3>Mortgage Calculator</h3>
+          </div>
+
+            {/* loan balance form */}
+            <div className="form-group">
+              <label for="balance" className="col-md-2 control-label"> Loan Balance: </label>
+              <div className="col-md-5">
+                <input
+                  name="balance"
+                  value={this.state.balance}
+                  onChange={this.updateBalance}
+                  className="form-control input-md"
+                  type="number"
+                  size="1"
+                  placeholder="0" />
+              </div>
+            </div>
+
           {/* interest rate form */}
-          <div className='col-md-1 form-group'>
-            <label htmlfor="rate"> Interest Rate (%): </label>
-            <input name="rate" type="number" className="form-control" />
+          <div className="form-group">
+            <label for="rate" className="col-md-2 control-label">Interest Rate (%): </label>
+            <div className="col-ms-5">
+              <input
+                name="rate"
+                value={this.state.rate}
+                onChange={this.updateRate}
+                className="form-control input-md"
+                type="number"
+                step="0.01"
+                size="1"
+                placeholder="0" />
+            </div>
           </div>
 
           {/* term form */}
-          <div className='col-md-1 form-group'>
-            <label htmlfor="term"> Loan Term(Years): </label>
-            <select name="term" type="number" className="form-control" >
-              <option value="15">15</option>
-              <option value="30">30</option>
-            </select>
+          <div className='form-group'>
+            <label for="term" className="col-md-2 control-label"> Loan Term (Years): </label>
+            <div className="col-md-5">
+              <select
+                name="term"
+                value={this.state.term}
+                onChange={this.updateTerm}
+                className="form-control input-md"
+                type="number"
+                size="1">
+                <option value="0">0</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+              </select>
+            </div>
           </div>
 
-          {/* button */}
-          <div className="form-group">
-          <div className="col-md-offset-2 col-md-10">
-            <button name="submit" 
-            className="btn btn-primary btn-block" 
-            onClick={this.handleClick}> Calculate </button>
-          </div>
-         </div>
+            {/* button */}
+            <div className="form-group">
+              <div className="col-md-offset-2 col-md-10">
+                <button
+                  name="submit"
+                  className="btn btn-primary btn-block"
+                  onClick={this.handleClick}> Calculate </button>
+              </div>
+            </div>
 
-
-          {/* output */}
-          <div className='col-md-1' id="output">
-            <h4 className="text-center font-weight-bold text-primary"> Monthly Payment: </h4>
-          </div>
-
-
-        </div>
+            {/* output */}
+            <div id="output"
+              name="output"
+              className="d-print-inline-block"><p>{this.state.payment}</p>
+            </div>
+          </form>
+      }
       </div>
     );
   }
-
+}
             
+    
 
 
 
