@@ -1,10 +1,11 @@
 ## Second Project in the React100 * Module @ San Diego Code School
 
-Author - Michel Roberts JR.
+#Author - Michel Roberts JR.
 
-Modified by Travis Ripley * Started April 1st, 2019 09:30
+#Modified by Travis Ripley * Started April 1st, 2019 09:30
 
 I will be logging my updates as a work through this project.
+
 
 # Mortgage Calculator
 
@@ -79,3 +80,16 @@ After running that command, you should see the following output:
 [Submit your project](https://goo.gl/forms/wx8DLSus7s88lk043) And that's it! Once you submit the project, you can move onto the next assignment.  An instructor will evaluate your work at a later time, giving feedback if necessary.
 
 ##
+
+## Now
+
+#Site deployed to Now at the following URL
+
+https://mortgage-calculator-b7i9bbuat.now.sh
+
+#Thank you for taking the time to look at my projects,
+
+#Also please follow my progress on youtube: 
+https://www.youtube.com/channel/UCXv4p-lDYeWXPlnoRFYCSUg
+
+## -Travez
