@@ -85,7 +85,7 @@ After running that command, you should see the following output:
 
 #Site deployed to Now at the following URL
 
-https://mortgage-calculator-b7i9bbuat.now.sh
+https://tsr-react100-mortgage-calc.herokuapp.com/
 
 #Thank you for taking the time to look at my projects,
 
